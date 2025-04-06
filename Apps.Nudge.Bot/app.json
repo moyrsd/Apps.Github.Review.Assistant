@@ -1,0 +1,15 @@
+{
+    "id": "0823607b-f2d0-4500-b29f-e0762bb6bbaf",
+    "version": "0.0.1",
+    "requiredApiVersion": "^1.44.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "Deepmoy Rudra Sarma",
+        "homepage": "https://github.com/moyrsd/Apps.Github.Review.Assistant",
+        "support": "https://github.com/moyrsd/Apps.Github.Review.Assistant"
+    },
+    "name": "Nudge",
+    "nameSlug": "nudge",
+    "classFile": "NudgeApp.ts",
+    "description": "This app will work with Github bot"
+}
