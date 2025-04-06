@@ -6,10 +6,11 @@
     "author": {
         "name": "Deepmoy Rudra Sarma",
         "homepage": "https://github.com/moyrsd/Apps.Github.Review.Assistant",
-        "support": "https://github.com/moyrsd/Apps.Github.Review.Assistant"
+        "support": "deeproyrs@gmail.com"
     },
     "name": "Nudge",
     "nameSlug": "nudge",
     "classFile": "NudgeApp.ts",
-    "description": "This app will work with Github bot"
+    "description": "This app will give friendly nudges to reviewers if the pull requests are stale for long time under needs review",
+    "implements": []
 }
