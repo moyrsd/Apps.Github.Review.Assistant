@@ -1,15 +1,24 @@
 import { Probot } from "probot";
 
 export default (app: Probot) => {
-  app.on("issues.opened", async (context) => {
-    const issueComment = context.issue({
-      body: "Thanks for opening this issue!",
-    });
-    await context.octokit.issues.createComment(issueComment);
-  });
-  // For more information on building apps:
-  // https://probot.github.io/docs/
+  app.on("pull_request.opened", async (context) => {
+    const messageForNewPRs = "Thanks for opening a new PR! ";
+    try {
+      const { owner, repo } = context.repo();
+      const pull_number = context.payload.pull_request.number;
 
-  // To get your app running against GitHub, see:
-  // https://probot.github.io/docs/development/
+      await context.octokit.rest.pulls.createReview({
+        owner,
+        repo,
+        pull_number,
+        body: messageForNewPRs,
+        event: "COMMENT", 
+        comments: [], 
+      });
+    } catch (error) {
+      
+      context.log.error("PR comment failed:", error);
+      throw error; 
+    }
+  });
 };
