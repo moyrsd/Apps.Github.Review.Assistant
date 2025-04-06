@@ -1,0 +1,1 @@
+export const REVIEW_PR_PROMPT = 'Hi there!'
