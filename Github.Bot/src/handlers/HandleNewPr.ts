@@ -1,12 +1,18 @@
 import "dotenv/config";
+import { reviewPrPrompt } from "../constants/prompt.js";
 const apiEndpoint = process.env.LLM_API_ENDPOINT;
 const apiKey = process.env.LLM_API_KEY;
 const model = process.env.MODEL;
 export class HandleNewPr {
-  public async llmRequest(prompt: string): Promise<any> {
-    if(apiEndpoint==undefined){
-        throw new Error(`Please give a ApiEndPoint in .env`);
+  /**
+   * @param code - The code snippet to be reviewed or processed by the LLM.
+   * @returns A Promise of the response which will be commented in the PR..
+   */
+  public async llmRequest(code: string): Promise<any> {
+    if (apiEndpoint == undefined) {
+      throw new Error(`Please give a ApiEndPoint in .env`);
     }
+    const prompt = reviewPrPrompt(code);
     const body = this.createBody(prompt);
     const response = await fetch(apiEndpoint, {
       method: "POST",
