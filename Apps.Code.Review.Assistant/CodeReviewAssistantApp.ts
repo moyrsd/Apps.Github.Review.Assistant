@@ -8,7 +8,7 @@ import { IAppInfo } from "@rocket.chat/apps-engine/definition/metadata";
 import { settings } from "./src/settings/settings";
 import { OAuth2Service } from "./src/services/OAuth2Service";
 import { GithubOauthconfig } from "./src/config/GithubOauthconfig";
-import { NudgeAppCommand } from "./src/commands/NudgeAppCommand";
+import { NudgeAppCommand } from "./src/commands/CodeReviewAssistantCommand";
 import {
     ApiSecurity,
     ApiVisibility,

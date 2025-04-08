@@ -12,7 +12,7 @@ import {
     IApiRequest,
     IApiResponse,
 } from "@rocket.chat/apps-engine/definition/api";
-import { NudgeApp } from "../../NudgeApp";
+import { NudgeApp } from "../../CodeReviewAssistantApp";
 import { OAuth2Service } from "../services/OAuth2Service";
 import { IUser } from "@rocket.chat/apps-engine/definition/users";
 

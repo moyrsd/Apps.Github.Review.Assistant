@@ -14,7 +14,7 @@ import { HandleOauth } from "../handlers/HandleOauth";
 import { App } from "@rocket.chat/apps-engine/definition/App";
 import { notifyMessage } from "../helpers/NotifyMessage";
 export class NudgeAppCommand implements ISlashCommand {
-    public command = "nudge";
+    public command = "cr";
     public i18nParamsExample = "";
     public i18nDescription = "";
     public providesPreview = false;
