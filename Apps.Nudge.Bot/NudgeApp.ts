@@ -9,6 +9,11 @@ import { settings } from "./src/settings/settings";
 import { OAuth2Service } from "./src/services/OAuth2Service";
 import { GithubOauthconfig } from "./src/config/GithubOauthconfig";
 import { NudgeAppCommand } from "./src/commands/NudgeAppCommand";
+import {
+    ApiSecurity,
+    ApiVisibility,
+} from "@rocket.chat/apps-engine/definition/api";
+import { Endpoint } from "./src/apiEndpoint/endPoint";
 
 export class NudgeApp extends App {
     private oauth2Service: OAuth2Service;
@@ -28,5 +33,10 @@ export class NudgeApp extends App {
                 new NudgeAppCommand(this, this.oauth2Service, this.getLogger())
             ),
         ]);
+        await configuration.api.provideApi({
+            visibility: ApiVisibility.PUBLIC,
+            security: ApiSecurity.UNSECURE,
+            endpoints: [new Endpoint(this, this.oauth2Service)],
+        });
     }
 }
